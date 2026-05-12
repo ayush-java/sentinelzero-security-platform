@@ -1,0 +1,32 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+
+# Logs
+logs/*.json
+logs/*.txt
+
+# Environment
+.env
+
+# macOS
+.DS_Store
+
+# Vite
+dist/
+
+# IDE
+.vscode/
+
+# Local auth/database
+backend/users.json
+
+# Python packages
+*.dist-info/
+
+# JWT/cache
+*.cache
