@@ -1473,36 +1473,33 @@ function App() {
 
             </div>
 
-      <div style={{ marginBottom: "20px" }}>
-        <ReCAPTCHA
-        sitekey="6LdvXfIsAAAAACWZS3LV3p2FoOSXqj1uoABGjh2i"
-        onChange={() => setCaptchaVerified(true)}
-        />
-      </div>
+            <div style={{ marginBottom: "20px" }}>
+              <ReCAPTCHA
+                sitekey="6LdvXfIsAAAAACWZS3LV3p2FoOSXqj1uoABGjh2i"
+                onChange={() => setCaptchaVerified(true)}
+              />
+            </div>
 
             <button
-                type="button"
-                onClick={() => {
-                alert("GUEST BUTTON WORKS")
-                    handleGuestAccess()
-                }}
-        disabled={!captchaVerified}
-                style={{
-                    width: "100%",
-                    padding: "18px",
-          backgroundColor: captchaVerified ? "#00d84f" : "#4b5563",
-                    color: "black",
-                    border: "none",
-                    borderRadius: "12px",
-                    fontSize: "20px",
-                    fontWeight: "bold",
-                    cursor: "pointer",
-                    marginTop: "20px",
-                    position: "relative",
-                    zIndex: 9999,
-                    pointerEvents: "auto",
-          opacity: captchaVerified ? 1 : 0.7,
-                }}
+              type="button"
+              onClick={handleGuestAccess}
+              disabled={!captchaVerified}
+              style={{
+                width: "100%",
+                padding: "18px",
+                backgroundColor: captchaVerified ? "#00d84f" : "#4b5563",
+                color: "black",
+                border: "none",
+                borderRadius: "12px",
+                fontSize: "20px",
+                fontWeight: "bold",
+                cursor: captchaVerified ? "pointer" : "not-allowed",
+                marginTop: "20px",
+                position: "relative",
+                zIndex: 9999,
+                pointerEvents: "auto",
+                opacity: captchaVerified ? 1 : 0.7,
+              }}
             >
                 Continue as Guest
             </button>
