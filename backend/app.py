@@ -59,11 +59,11 @@ ADMIN_PASSWORD = "sentinel123"
 # PATHS
 # ---------------------------------------------------
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent
 
 LOGS_DIR = BASE_DIR / "logs"
 
-USERS_FILE = BASE_DIR / "backend" / "users.json"
+USERS_FILE = BASE_DIR / "users.json"
 
 ALERTS_FILE = LOGS_DIR / "alerts.json"
 
@@ -75,6 +75,11 @@ AUTH_LOGS_FILE = LOGS_DIR / "auth_logs.json"
 
 
 LOGS_DIR.mkdir(exist_ok=True)
+
+ALERTS_FILE.touch(exist_ok=True)
+RESPONSES_FILE.touch(exist_ok=True)
+BLOCKED_IPS_FILE.touch(exist_ok=True)
+AUTH_LOGS_FILE.touch(exist_ok=True)
 
 FAILED_LOGIN_ATTEMPTS = {}
 
@@ -176,17 +181,7 @@ def log_auth_event(event, username, role, ip):
 @app.route("/")
 def home():
 
-    return jsonify({
-
-        "project": "SentinelZero",
-
-        "status": "running",
-
-        "message": "Zero Trust Security Platform Backend Active",
-
-        "time": str(datetime.now())
-
-    })
+    return {"status": "backend working"}
 
 # ---------------------------------------------------
 # VERIFY CAPTCHA ROUTE
@@ -230,7 +225,7 @@ def verify_captcha():
 @app.route("/create-account", methods=["POST"])
 def create_account():
 
-    data = request.json
+    data = request.get_json(silent=True) or {}
 
     email = data.get("email")
 
@@ -339,7 +334,7 @@ def login():
 
     password = payload.get("password", "")
 
-    users_file = "backend/users.json"
+    users_file = USERS_FILE
 
     if not os.path.exists(users_file):
 
@@ -365,15 +360,7 @@ def login():
             ):
 
                 access_token = create_access_token(
-
-                    identity={
-
-                        "email": user["email"],
-
-                        "role": "user"
-
-                    }
-
+                    identity=user["email"]
                 )
 
                 if client_ip in FAILED_LOGIN_ATTEMPTS:
@@ -400,7 +387,9 @@ def login():
 
                     "token": access_token,
 
-                    "role": "user"
+                    "role": "user",
+
+                    "email": user["email"]
 
                 })
 
@@ -704,11 +693,12 @@ def auth_logs():
 # RUN APP
 # ---------------------------------------------------
 
+port = int(os.environ.get("PORT", 5000))
+
 if __name__ == "__main__":
 
-    app.run(
+    app.run(host="0.0.0.0", port=port)
 
-        debug=True,
 
-        port=5001
-    )
+
+application = app

@@ -2,7 +2,6 @@ import { useEffect, useState } from "react"
 import axios from "axios"
 import Skeleton from "react-loading-skeleton"
 import "react-loading-skeleton/dist/skeleton.css"
-import ReCAPTCHA from "react-google-recaptcha"
 
 import {
   LineChart,
@@ -20,6 +19,8 @@ import {
 } from "recharts"
 
 function App() {
+
+  const API_URL = "https://sentinelzero-backend-env.eba-ii7ke2jn.us-east-1.elasticbeanstalk.com"
 
   const [backendData, setBackendData] = useState(null)
 
@@ -945,7 +946,7 @@ function App() {
 
       try {
 
-        const homeResponse = await fetch("http://127.0.0.1:5001/")
+        const homeResponse = await fetch(`${API_URL}/`)
         const homeData = await homeResponse.json()
         setBackendData(homeData)
 
@@ -955,7 +956,7 @@ function App() {
           return
         }
 
-        const blockedIpsResponse = await fetch("http://127.0.0.1:5001/blocked-ips", {
+        const blockedIpsResponse = await fetch(`${API_URL}/blocked-ips`, {
 
           headers: {
 
@@ -978,7 +979,7 @@ function App() {
         const blockedIpsData = await blockedIpsResponse.json()
         setBlockedIps(blockedIpsData)
 
-        const threatsResponse = await fetch("http://127.0.0.1:5001/threats", {
+        const threatsResponse = await fetch(`${API_URL}/threats`, {
 
           headers: {
 
@@ -1001,7 +1002,7 @@ function App() {
         const threatsData = await threatsResponse.json()
         setLiveThreats(threatsData)
 
-        const responsesResponse = await fetch("http://127.0.0.1:5001/responses", {
+        const responsesResponse = await fetch(`${API_URL}/responses`, {
 
           headers: {
 
@@ -1024,7 +1025,7 @@ function App() {
         const responsesData = await responsesResponse.json()
         setResponses(responsesData)
 
-        const awsStatusResponse = await fetch("http://127.0.0.1:5001/aws-status", {
+        const awsStatusResponse = await fetch(`${API_URL}/aws-status`, {
 
           headers: {
 
@@ -1091,7 +1092,7 @@ function App() {
 
     try {
 
-        const response = await fetch("http://127.0.0.1:5001/login", {
+        const response = await fetch(`${API_URL}/login`, {
 
             method: "POST",
 
@@ -1100,8 +1101,8 @@ function App() {
             },
 
             body: JSON.stringify({
-                username,
-                password
+                username: username,
+                password: password
             })
 
         })
@@ -1140,16 +1141,9 @@ function App() {
 
     console.log("HANDLE GUEST RUNNING")
 
-    if (!captchaToken) {
-
-        alert("Please complete CAPTCHA")
-        return
-
-    }
-
     try {
 
-        const response = await fetch("http://127.0.0.1:5001/guest-login", {
+        const response = await fetch(`${API_URL}/guest-login`, {
 
             method: "POST",
 
@@ -1158,7 +1152,7 @@ function App() {
             },
 
             body: JSON.stringify({
-                token: captchaToken
+              token: captchaToken || "demo-guest-bypass"
             })
 
         })
@@ -1215,7 +1209,7 @@ function App() {
     try {
 
       const response = await fetch(
-        "http://127.0.0.1:5001/protected",
+        `${API_URL}/protected`,
         {
 
           headers: {
@@ -1262,7 +1256,7 @@ function App() {
     try {
 
       const response = await fetch(
-        "http://127.0.0.1:5001/create-account",
+        `${API_URL}/create-account`,
         {
           method: "POST",
           headers: {
@@ -1477,16 +1471,6 @@ function App() {
               </p>
 
             </div>
-
-            <div className="flex justify-center mb-2">
-
-              <ReCAPTCHA
-                sitekey="6Ld2xeUsAAAAAH36l3M2dXv4G2ZRFOTDywBCKQCZ"
-                onChange={(value) => setCaptchaToken(value)}
-              />
-
-            </div>
-
 
             <button
                 type="button"
