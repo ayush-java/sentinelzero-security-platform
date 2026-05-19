@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import axios from "axios"
 import Skeleton from "react-loading-skeleton"
 import "react-loading-skeleton/dist/skeleton.css"
+import ReCAPTCHA from "react-google-recaptcha"
 
 import {
   LineChart,
@@ -20,7 +21,7 @@ import {
 
 function App() {
 
-  const API_URL = "https://sentinelzero-backend-env.eba-ii7ke2jn.us-east-1.elasticbeanstalk.com"
+  const API_URL = "http://50.17.5.214:5001"
 
   const [backendData, setBackendData] = useState(null)
 
@@ -1068,7 +1069,7 @@ function App() {
 
       generateLiveData()
 
-    }, 5000)
+    }, 5001)
 
     const sessionInterval = setInterval(() => {
 
@@ -1472,16 +1473,24 @@ function App() {
 
             </div>
 
+      <div style={{ marginBottom: "20px" }}>
+        <ReCAPTCHA
+        sitekey="6LdvXfIsAAAAACWZS3LV3p2FoOSXqj1uoABGjh2i"
+        onChange={() => setCaptchaVerified(true)}
+        />
+      </div>
+
             <button
                 type="button"
                 onClick={() => {
                 alert("GUEST BUTTON WORKS")
                     handleGuestAccess()
                 }}
+        disabled={!captchaVerified}
                 style={{
                     width: "100%",
                     padding: "18px",
-                    backgroundColor: "#00d84f",
+          backgroundColor: captchaVerified ? "#00d84f" : "#4b5563",
                     color: "black",
                     border: "none",
                     borderRadius: "12px",
@@ -1492,6 +1501,7 @@ function App() {
                     position: "relative",
                     zIndex: 9999,
                     pointerEvents: "auto",
+          opacity: captchaVerified ? 1 : 0.7,
                 }}
             >
                 Continue as Guest
