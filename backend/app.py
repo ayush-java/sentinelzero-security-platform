@@ -152,7 +152,9 @@ def log_auth_event(event, username, role, ip):
 
     with open(AUTH_LOGS_FILE, "r") as f:
 
-        logs = json.load(f)
+        content = f.read().strip()
+
+        logs = json.loads(content) if content else []
 
     logs.append({
 
@@ -685,7 +687,9 @@ def auth_logs():
 
     with open(AUTH_LOGS_FILE, "r") as f:
 
-        logs = json.load(f)
+        content = f.read().strip()
+
+        logs = json.loads(content) if content else []
 
     return jsonify(list(reversed(logs[-100:])))
 
@@ -693,7 +697,7 @@ def auth_logs():
 # RUN APP
 # ---------------------------------------------------
 
-port = int(os.environ.get("PORT", 5000))
+port = int(os.environ.get("PORT", 5001))
 
 if __name__ == "__main__":
 
