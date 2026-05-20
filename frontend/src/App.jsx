@@ -21,7 +21,7 @@ import {
 
 function App() {
 
-  const API_URL = "http://50.17.5.214:5001"
+  const API_URL = "https://sentinelzero.org/api"
 
   const [backendData, setBackendData] = useState(null)
 
