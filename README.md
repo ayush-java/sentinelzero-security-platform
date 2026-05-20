@@ -1,116 +1,109 @@
 # 🛡️ SentinelZero
 
-## 🚀 Overview
+# 🚀 Next-Generation Cloud Cybersecurity Platform
 
-SentinelZero is a next-generation cloud cybersecurity platform designed to simulate a modern secure enterprise environment using:
+🌐 LIVE DEPLOYMENT: https://sentinelzero.org
 
-- full-stack cloud deployment
-- production-grade backend infrastructure
-- secure authentication systems
-- real-time API communication
-- cloud-hosted frontend/backend architecture
-- Linux production hosting
-- Google reCAPTCHA verification
-- enterprise deployment workflows
+SentinelZero is a fully deployed enterprise-style cybersecurity platform built using:
+
+- React
+- Flask
+- Gunicorn
+- Nginx
+- AWS EC2
+- Cloudflare
+- Linux
+- Google reCAPTCHA
+- HTTPS SSL Encryption
 
 The platform demonstrates real-world:
 
 - cloud engineering
 - cybersecurity deployment
-- Linux server management
-- frontend/backend production architecture
-- DevOps workflows
-- secure cloud application hosting
-
-Unlike tutorial-based projects, SentinelZero was fully deployed and debugged in a live AWS cloud environment using real production deployment tooling.
+- Linux server administration
+- production infrastructure
+- secure frontend/backend communication
+- DevOps deployment workflows
+- reverse proxy configuration
+- real-world debugging experience
 
 ---
 
 # 🎥 Live Demo Video
 
-Watch the full project walkthrough and deployment demonstration here:
+Watch the full deployment walkthrough and project demonstration here:
 
 👉 ADD_YOUR_LOOM_VIDEO_LINK_HERE
 
 The demo includes:
 
-- full architecture walkthrough
 - AWS EC2 deployment
+- HTTPS custom domain setup
+- Cloudflare DNS configuration
 - React frontend hosting
 - Flask backend APIs
+- Nginx reverse proxy configuration
+- Gunicorn production deployment
 - Google reCAPTCHA integration
-- secure guest authentication
-- Gunicorn production server
-- Nginx frontend hosting
-- Linux backend services
-- GitHub deployment workflow
+- secure authentication flow
 - real-world debugging process
+- GitHub deployment workflow
 
 ---
 
-# 🌐 Live Deployment
+# 🌐 Live Production Deployment
 
 ## 🔥 Live Website
 
-👉 http://50.17.5.214/
-
-This deployment includes:
-
-- React frontend
-- Flask backend APIs
-- Gunicorn production backend
-- Nginx frontend hosting
-- Google reCAPTCHA integration
-- AWS EC2 Ubuntu deployment
-- persistent backend Linux service
+👉 https://sentinelzero.org
 
 ---
 
-# ✅ Key Features
+# ✅ Production Infrastructure
 
-- ✅ Full-stack cloud deployment
-- ✅ React + Flask architecture
-- ✅ AWS EC2 production hosting
-- ✅ Gunicorn production backend
-- ✅ Nginx frontend hosting
-- ✅ Persistent Linux backend service
-- ✅ Auto-start backend on reboot
-- ✅ Google reCAPTCHA guest verification
-- ✅ User authentication system
-- ✅ Account creation & login
-- ✅ Secure API communication
-- ✅ Production-grade deployment workflow
-- ✅ GitHub-integrated deployment pipeline
-- ✅ Real-world cloud debugging experience
-- ✅ Secure cloud-hosted infrastructure
-- ✅ Linux server management
-- ✅ Production frontend/backend routing
-- ✅ Public internet accessibility
+- ✅ Custom Domain Deployment
+- ✅ HTTPS SSL Encryption
+- ✅ Cloudflare CDN + DNS
+- ✅ AWS EC2 Ubuntu Hosting
+- ✅ React + Flask Architecture
+- ✅ Gunicorn Production Backend
+- ✅ Nginx Reverse Proxy
+- ✅ systemd Backend Service
+- ✅ Persistent Backend Hosting
+- ✅ Google reCAPTCHA Integration
+- ✅ Secure API Communication
+- ✅ Production Deployment Workflow
+- ✅ Public Cloud Deployment
+- ✅ GitHub Deployment Pipeline
 
 ---
 
-# 🏗️ Architecture
+# 🏗️ Architecture Diagram
 
 ![SentinelZero Architecture](docs/sentinelzero-architecture.png)
 
 ```text
 Users
    ↓
+Cloudflare CDN + SSL
+   ↓
+HTTPS Secure Routing
+   ↓
 AWS EC2 Ubuntu Server
    ↓
-Nginx Frontend Hosting
+Nginx Reverse Proxy
    ↓
 React + Vite Frontend
    ↓
-HTTPS / REST API Communication
+REST API Communication
    ↓
 Gunicorn Production Server
    ↓
 Flask Backend APIs
    ↓
-Authentication + Security Modules
+Authentication + Security Layer
    ↓
-Database / Threat Analytics / Logging
+Threat Analytics / Logging
 ```
 
 ---
@@ -124,8 +117,9 @@ Database / Threat Analytics / Logging
 | Styling | Tailwind CSS |
 | Backend | Flask |
 | Production Backend | Gunicorn |
-| Web Server | Nginx |
+| Reverse Proxy | Nginx |
 | Cloud Hosting | AWS EC2 |
+| DNS + SSL | Cloudflare |
 | Operating System | Ubuntu Linux |
 | CAPTCHA Security | Google reCAPTCHA |
 | Deployment Workflow | Git + GitHub |
@@ -139,24 +133,18 @@ Database / Threat Analytics / Logging
 
 # ☁️ Cloud Deployment
 
-SentinelZero is fully deployed on:
+SentinelZero is fully deployed on AWS cloud infrastructure using a production-grade architecture.
+
+## Deployment Stack
 
 - AWS EC2 Ubuntu Server
-- Public cloud-hosted infrastructure
-- Linux production environment
-- Nginx frontend web server
-- Gunicorn backend service
-- systemd persistent backend management
-
-Deployment architecture includes:
-
-- public frontend hosting
-- backend API routing
-- secure frontend/backend communication
-- Linux process management
-- persistent backend hosting
-- automatic backend restart
-- production deployment workflows
+- Nginx Reverse Proxy
+- Gunicorn WSGI Server
+- Flask Backend APIs
+- React + Vite Frontend
+- Cloudflare CDN + DNS
+- HTTPS SSL Encryption
+- Linux systemd Service Automation
 
 ---
 
@@ -164,17 +152,19 @@ Deployment architecture includes:
 
 SentinelZero includes:
 
-- user registration
 - secure login system
+- account creation
 - guest access mode
-- CAPTCHA-protected guest verification
-- secure authentication routing
+- CAPTCHA-protected authentication
+- secure frontend/backend communication
 
-The platform integrates:
+---
 
-## ✅ Google reCAPTCHA
+# 🛡️ Google reCAPTCHA Protection
 
-Features:
+SentinelZero integrates Google reCAPTCHA to secure guest authentication and prevent automated abuse.
+
+Features include:
 
 - “I’m not a robot” verification
 - image-based CAPTCHA challenges
@@ -183,31 +173,29 @@ Features:
 
 This improves:
 
-- security
+- authentication security
 - abuse prevention
-- authentication reliability
 - production realism
+- enterprise-grade protection
 
 ---
 
 # 🏗️ Production Infrastructure
 
-The backend uses:
-
 ## ⚡ Gunicorn Production WSGI Server
 
-instead of Flask development server.
+The backend uses Gunicorn instead of Flask’s development server.
 
-Benefits:
+Benefits include:
 
-- production-grade backend hosting
+- production-grade hosting
 - multiple request handling
-- persistent Linux hosting
-- stable cloud deployment
+- persistent backend services
+- stable Linux deployment
 
 ---
 
-## ⚡ systemd Linux Service
+## ⚡ systemd Linux Backend Service
 
 The backend runs as a permanent Linux service using:
 
@@ -218,20 +206,21 @@ sudo systemctl enable sentinelzero
 
 This enables:
 
-- auto-start on reboot
-- persistent backend hosting
+- automatic backend startup
+- persistent hosting
 - crash recovery
-- production-style deployment
+- production deployment behavior
 
 ---
 
-## ⚡ Nginx Frontend Hosting
+## ⚡ Nginx Reverse Proxy
 
-Frontend build files are hosted using:
+Nginx is configured as a production reverse proxy for:
 
-- Nginx
-- static frontend serving
-- production frontend deployment
+- frontend hosting
+- backend API routing
+- HTTPS traffic handling
+- secure request forwarding
 
 ---
 
@@ -240,33 +229,34 @@ Frontend build files are hosted using:
 During deployment, multiple real production issues were debugged and resolved, including:
 
 - frontend/backend communication failures
-- localhost deployment misconfiguration
+- localhost deployment issues
 - EC2 security group networking
-- JSON parsing backend crashes
-- Gunicorn worker memory issues
+- Cloudflare SSL configuration
+- Nginx reverse proxy debugging
+- Gunicorn backend deployment
+- API routing failures
+- HTTPS mixed-content issues
+- reCAPTCHA domain validation
 - Node.js version incompatibility
-- Vite production build deployment
 - GitHub deployment synchronization
 - Linux service management
-- cloud firewall configuration
-- API routing failures
 - browser caching issues
+- cloud networking failures
 - production deployment troubleshooting
 
 ---
 
 # 📊 Security Features
 
-## 🛡️ Google reCAPTCHA Protection
+## ☁️ Cloud Security
 
-SentinelZero integrates Google reCAPTCHA to secure guest access and prevent automated abuse.
+AWS deployment security includes:
 
-Features include:
-
-- human verification
-- bot protection
-- image-based challenge verification
-- CAPTCHA-secured guest authentication
+- EC2 Security Groups
+- Cloudflare protection
+- HTTPS SSL encryption
+- secure backend isolation
+- protected public routing
 
 ---
 
@@ -278,18 +268,7 @@ Backend security includes:
 - Linux process isolation
 - secure API communication
 - systemd-managed services
-- production-grade backend deployment
-
----
-
-## ☁️ Cloud Security
-
-AWS deployment security includes:
-
-- EC2 Security Groups
-- Linux firewall architecture
-- isolated backend services
-- protected public access routing
+- production-grade deployment
 
 ---
 
@@ -324,7 +303,7 @@ sentinelzero-security-platform/
 
 ---
 
-# 🧪 How To Run
+# 🧪 How To Run Locally
 
 ## 1. Clone Repository
 
@@ -436,19 +415,35 @@ This project demonstrates:
 
 - cloud engineering
 - AWS deployment
+- Cloudflare configuration
 - Linux server management
-- Nginx hosting
+- Nginx reverse proxy configuration
 - Gunicorn backend deployment
 - frontend/backend production architecture
 - React deployment
 - Flask API development
 - GitHub deployment workflows
-- cloud networking
+- HTTPS SSL deployment
 - cybersecurity deployment practices
 - CAPTCHA security integration
-- production debugging
 - DevOps workflows
 - persistent backend infrastructure
+- production debugging
+
+---
+
+# 🚀 Enterprise-Level Features
+
+- Zero Trust Authentication
+- Google reCAPTCHA Verification
+- HTTPS SSL Encryption
+- Cloudflare Protection
+- Secure Guest Access
+- Persistent Linux Backend Services
+- Reverse Proxy Infrastructure
+- Cloud-Native Deployment
+- Real-Time Backend APIs
+- Production-Grade Architecture
 
 ---
 
@@ -458,7 +453,6 @@ Planned future upgrades:
 
 - JWT authentication
 - PostgreSQL database integration
-- HTTPS + SSL deployment
 - Docker containerization
 - CloudWatch logging
 - AWS WAF integration
@@ -468,7 +462,6 @@ Planned future upgrades:
 - attack monitoring
 - role-based access control
 - Redis caching
-- Nginx reverse proxy APIs
 - live threat simulation engine
 
 ---
@@ -481,8 +474,9 @@ Planned future upgrades:
 - AWS cloud deployment
 - Linux production deployment
 - Frontend/backend engineering
-- DevOps workflow implementation
-- Nginx & Gunicorn deployment
+- Cloudflare & HTTPS configuration
+- Nginx reverse proxy implementation
+- Gunicorn production backend setup
 - CAPTCHA security integration
 - Production debugging & infrastructure setup
 
@@ -494,8 +488,11 @@ SentinelZero demonstrates a real-world cloud cybersecurity deployment pipeline b
 
 - cloud infrastructure
 - secure authentication systems
+- HTTPS SSL encryption
+- Cloudflare protection
 - Linux production hosting
 - frontend/backend deployment
+- Nginx reverse proxy routing
 - production web servers
 - persistent backend services
 - CAPTCHA security
