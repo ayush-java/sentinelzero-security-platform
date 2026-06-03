@@ -38,7 +38,7 @@ The platform demonstrates real-world:
 
 Watch the full deployment walkthrough and project demonstration here:
 
-👉 ADD_YOUR_LOOM_VIDEO_LINK_HERE
+👉 https://drive.google.com/file/d/1Aj9uH7YNeO7xPedi3bCC1cajCEQVPjVy/view?usp=sharing
 
 The demo includes:
 
