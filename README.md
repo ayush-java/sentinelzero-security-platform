@@ -34,11 +34,9 @@ The platform demonstrates real-world:
 
 ---
 
-# 🎥 Live Demo Video
+## 🎥 Demo Video
 
-Watch the full deployment walkthrough and project demonstration here:
-
-👉 https://drive.google.com/file/d/1Aj9uH7YNeO7xPedi3bCC1cajCEQVPjVy/view?usp=sharing
+🔗 Demo Link: [Watch SentinelZero Demo](https://drive.google.com/file/d/1Aj9uH7YNeO7xPedi3bCC1cajCEQVPjVy/view?usp=sharing)
 
 The demo includes:
 
